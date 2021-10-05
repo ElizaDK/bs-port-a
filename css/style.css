@@ -1,0 +1,404 @@
+:root{
+   --color-primary:#917758;
+   --color-secundary:#3c2915;
+   --color-primary-light:#f5eee6;
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+     font-family: 'Poppins', sans-serif;/*fonte do google fonts*/
+}
+
+
+ /*div que vai envolver todo conteudo e limitar a largura do site*/
+.container{
+   
+    width: 1170px;
+    margin: 0 auto;
+}
+
+/************
+*   HOME
+*************/
+
+
+.home{
+    background-image: url(../images/bg-home.jpg);
+    height: 100vh;/* viewport height - se ajusta do tamanho que for o dispositivo*/
+    background-size: cover;/* ajusta a imagem na tela */
+    position: relative;/*para poder centralizar o conteudo do BANNER*/
+    background-attachment: fixed;/*az a imagem fica fixa quando rola p baixo na outra seccao*/
+}
+.home .header{
+    padding: 30px 0;/*so para distanciar do topo*/
+}
+.home .header .nav{
+    display: flex; /* so para poder centralizar*/
+    justify-content: center;/*com display flex, podemos centralizar usando o justify-content*/
+}
+.home .header .nav ul{
+    display: flex; /* ul é pai do li*/
+    list-style: none; /*tirar as bolinhas da lista*/
+}
+.home .header .nav ul li{
+    display: flex; /* pq li é pai do "a" */
+    align-items: center; /*com li em flex, podemos usar o align-itens*/
+    justify-content: center;/*como criou um tamanho max para li ficou possivel centralizar na vertical*/
+    width: 150px;/* foi criado um tamanho maximo para o li*/
+}
+.home .header .nav ul li a{
+    color: #fff; /*cor branca da fonte*/
+    text-decoration: none;/*tirar o sublinhado*/
+    text-transform: uppercase;/*colocar tudo em maiuscula*/
+    font-weight: bold;/*engrossar a fonte tipo negrito*/
+    font-size: 18px;/*tamanho da fonte*/
+    padding: 20px;/* usando o padding para dar uma distancia para o hover*/
+}
+.home .header .nav ul li a:hover{
+    border-bottom: 1px solid var(--color-primary);/*foi criado uma root com cores que predomina no site, borda do meu*/
+    color: var(--color-primary);/*foi criado uma root com cores que predomina no site*/
+}
+.home .header .nav ul li .logo{
+    margin: 0 40px; /* margin lateral da logomarca central*/
+}
+
+
+
+/*****************
+*  HOME - BANNER
+******************/
+
+
+.home .banner{
+    color: #fff;
+    text-align: center;
+   /*para ter um alinhamento central correto foi feito*/
+    top: 50%; /*a div banner ficae a 50% do top*/
+    left: 50%;/*a div banner ficae a 50% da lateral esquerda*/
+    height: 278px; /*a div banner medir no dev tools a altura correta da div*/
+    width: 760px;/*a div banner medir no dev tools a largura correta da div*/
+    margin-left: -380px;/*a div banner pegar o valor da largura e dividir por 2, colocar negativo*/
+    margin-top: -139px;/*a div banner pegar o valor da altura e dividir por 2, colocar negativo*/
+    position: absolute;/*esta div esta absoluta em relação ao pai que a section .home (relativa)*/
+
+}
+.home .banner span{
+    display: block;/*faz o span ser um bloco e empurra o que esta do lado para baixo (como a imagem do bigode)*/
+}
+.home .banner h1{
+    font-size: 120px;
+}
+.home .banner .slogan1{
+    text-transform: uppercase;/*deixar caixa alta*/
+    letter-spacing: 3px; /*espaço entre as letras*/
+    color: var(--color-primary);/*cor da fonte primaria*/
+    font-size: 25px;
+}
+.home .banner .slogan2{
+   margin-bottom: 15px;
+}
+
+/*****************
+*  ABOUT 
+******************/
+.about{
+    /*height: 100vh;/*altura da tela(nao ta usando pq nao precisa mais depois de configurar tudo)*/
+    background-color: var(--color-primary);
+    
+}
+.about .container{ /*vai modificar o CONTAINER que esta DENTRO do about*/
+    display: flex; /*os filhos do container do about ficarao lado a lado*/
+}
+.about .timing{
+    width: 33%;/*dividir os espaços onde a div do lado esquerdo é menor cerca de 33% da tela*/
+    background-image: url(../images/brush-big.jpg);/*imagem de fundo da div*/
+    padding:20px ;
+    position: relative;/*para ficar por cima da outra section*/
+    top: -50px;/* quanto ele ai ficar por cima da outra section*/
+}
+.about .timing .overlay{
+    background: rgba(0, 0, 0, 0.7);/*cor da div que tera cor escura*/
+    text-align: center;/*tudo que tiver dentro ficara alinhado ao centro*/
+    padding: 40px 20px;
+}
+.about .timing .icon-cut{
+    width: 50px;/*tamanho da imagem da tesoura*/
+}
+.about .timing h3{
+    color: var(--color-primary);/*tamanho da imagem da tesoura*/
+    text-transform: uppercase;/* deixar em caixa alta*/
+    border-bottom: 1px solid var(--color-primary);
+    width: fit-content;/*faz o h3 ser do tamanho do conteudo, facilitando assim ate a border-bottom*/
+    margin: 0 auto 30px auto;/*essa margem é necessaria devido ao fit-content para centralizar*/
+    font-size: 30px;
+}
+.about .timing .text{
+    margin:10px 0 ;
+}
+.about .timing .text:after{/*inserir algo depois da div text*/
+    content: '•';/*content é obrigatorio na regra do after, nome da bolinha é (dot char - pega no google)*/
+    color: #fff;
+    display: block;/*para nao ficar nada do lado*/
+    font-size: 34px;
+    margin-top: 10px;
+}
+.about .timing .text:last-of-type:after{/*last-of-type(no ultimo desse tipo) coloque um |*/
+    content: '|';
+}
+.about .timing .text h4{
+    color: gray;
+    font-weight: 400;
+    font-size: 15px;
+}
+.about .timing span{
+    color: #fff;
+    font-size: 15px;
+    display: block;/*para o texto ir para baixo da imagem*/
+}
+.about .experience{
+    width: 66%;/*dividir os espaços onde a div do lado esquerdo é menor cerca de 66% da tela*/
+    color: #fff;
+    margin-left: 7%;/*distancia da div da esquerda*/
+    margin-top: 100px;/*margin da section anterior*/
+}
+.about .experience h2{
+    font-weight: 400; 
+    font-size: 40px;
+}
+.about .experience h2:after{
+    display: block; /*para ficar abaixo do texto*/
+    content: ''; /*pq precisamos somente de uma linha*/
+    width: 100px;
+    height: 3px;
+    background-color: #a38f78;
+    margin: 20px 0;/* distancia do texto*/
+}
+.about .experience .text{
+    display: flex;/*fazer os paragrafos e a imagem ficarem lado a lado*/
+    justify-content: space-between;/*criar um espaço entre o paragrafos e a imagem*/
+}
+.about .experience .text p{
+    margin-bottom: 20px;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+
+/*****************
+*  SERVICES
+******************/
+
+.services{
+    
+    text-align: center;
+    background-color: var(--color-primary-light);
+    padding: 100px 0;
+}
+.services h2{
+    color: var(--color-secundary);
+    font-weight: 400;
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+.services .boxes{
+    margin-top: 60px;/*distancia com relacao a cima*/
+    display: flex;/*para os filhos poderem ficar lado a lado*/
+    justify-content: space-between;
+}
+.services .box{
+    border: 2px solid var(--color-primary);
+    padding: 40px 40px;
+    margin: 30px;
+}
+.services .box h4{
+    color: var(--color-secundary);
+    margin-top: 20px;
+}
+.services .box p{
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 25px;
+}
+
+
+/*****************
+*  APPOINTMENT
+******************/
+
+.appointment{
+    background-color: var(--color-primary);
+    height: 100vh; /*coloca provisorio para ficar na tela toda enquanto programa*/
+    padding: 100px 0;
+    background-image: url(../images/chair-ic.png);
+    background-repeat: no-repeat;
+    background-position:right bottom;/*primeiro local na horizontal depois na vertical*/
+    background-size:280px ;
+}
+.appointment h2{
+    
+    font-weight: 400;
+    font-size: 45px;
+    color: var(--color-primary-light);
+    margin-bottom:10px ;
+    text-align: center;
+}
+.appointment img{
+    margin: 0 auto;/*para imagem do bigode ficar centralizada*/
+    display: block;/*para a imagem obedecer e ficar no centro*/
+}
+.appointment form{
+    margin-top: 50px;
+}
+.appointment .personal-data{
+    display: flex; /*div criada somente para ser pai e fazer os input ficarem lado a lado*/
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.appointment .input-wrapper{
+    width: 100%;/*aumentando a div para o input ficar maior*/
+    margin-right: 50px;/*para desgrudar um input do outro*/
+}
+.appointment .input-wrapper:last-of-type{
+    margin-right: 0;/*no ultimo input foiretirado a margen direita para ficar com mesmo tamamnho do textarea*/
+}
+.appointment label{
+    color: var(--color-primary-light);
+    font-size: 14px;
+    display: block;/*para fazer o inout ficar abaixo*/
+    margin-bottom: 5px;
+}
+.appointment .personal-data input,
+.appointment .personal-data select,
+.appointment textarea{
+    padding: 10px;
+    outline: none;/*quando selelciona aparece a selecão da caixa, essa opcao retira*/
+    border: none;
+    width: 100%; /*100% da div*/
+    border-radius: 5px;
+}
+.appointment textarea{
+    height: 100px;
+}
+.appointment button{
+    background-color: var(--color-secundary);
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+.appointment button:hover{
+    background-color: var(--color-primary-light);
+    color: var(--color-secundary);
+    transform: scale(0.98);
+}
+
+
+/*****************
+*  GALLERY
+******************/
+.gallery{
+    background-color: var(--color-primary-light);
+   /* height: 100vh; /*coloca provisorio para ficar na tela toda enquanto programa*/
+    padding: 100px 0;
+    
+}
+.gallery h2{
+    
+    font-weight: 400;
+    font-size: 45px;
+    color: var(--color-secundary);
+    margin-bottom:10px ;
+    text-align: center;
+}
+.gallery img{
+    margin: 0 auto;/*para imagem do bigode ficar centralizada*/
+    display: block;/*para a imagem obedecer e ficar no centro*/
+}
+.gallery .gallery-wrapper{
+    
+    display: flex;/*para as div com as imagens ficarem "lado a lado"*/
+    flex-direction: column;/*para ficar em 3 colunas*/
+    height: 800px;/*estabelecendo a altura mxima do wrapper*/
+    flex-wrap: wrap; /*fazendo os elementos filhos se acomodarem dentro do elemeto pai e nao transbordar*/
+    width: 900px;/*definindo a largura maxima que pode ter, assim o wrap vai ajustar dentro dos limites*/
+    margin: 50px auto;/*auto vai centralizar*/
+    
+}
+.gallery .gallery-wrapper div{
+    border: 10px solid var(--color-primary);/* borda da div de cada imagem*/
+    margin: 6px;/*distanciamento*/
+    width: 33%;/*pq tera 3 colunas*/
+}
+.gallery .gallery-wrapper div img{
+        width: 100%;/*ocupar toda a div e nao ultrapassar*/
+}
+
+/*****************
+*  LOCATION
+******************/
+
+.location {
+    /*height: 100vh;/*provisorio*/
+    padding: 100px 0;
+    background: url(../images/bg-location.jpg);
+    background-size: cover;
+}
+.location .head{
+    background-color: #191919;
+    padding: 40px;
+    width:100%;/*100% do conteiner*/
+    display: flex;/*para as div ficarem lado a lado*/
+    justify-content: space-between;
+}
+.location .head .info{
+    display: flex;/*para as div ficarem lado a lado*/
+    align-items: center;
+}
+.location .head .info .icon{
+    display: flex;/*so para podercentralizar a imagem no centro do circulo*/
+    align-items: center;/*so usa com o flex*/
+    justify-content: center;/**alinhar na horizontal tb*/
+    border: 1px solid var(--color-primary);
+    padding: 10px;
+    border-radius: 50%;/*nem todos ficaram redondo devido a imagem, entao vamos atribuir um tamanho para a div e ajustar a imagem*/
+    width: 50px;/*foi atrubido altura e largura para que todos fiquem redondo*/
+    height: 50px;
+    margin-right: 20px;
+}
+.location .head .info .text span{
+    display: block;/*para os pan ficarem abaixo do outro*/
+    font-size: 12px;
+}
+.location .head .info .text span:first-child{
+   color: silver;
+}
+.location .head .info .text span:last-child{
+    color: #fff;
+ }
+ .location .map{
+     width: 100%;
+ }
+ .location iframe{
+    width: 100%;
+ }
+
+
+
+/*****************
+*  FOOTER
+******************/
+
+ .footer{
+    background-color: #191919;
+    color: #fff;
+    padding: 40px;
+    text-align: center;
+    font-size: 12px;
+ }
